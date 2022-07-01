@@ -1,0 +1,9 @@
+.movie-title {
+    color: white;
+}
+
+.card-movie:hover {
+    opacity: 0.7;
+    transform: scale(1.02);
+}
+
