@@ -1,24 +1,12 @@
-const apiKey = "1a5f9468a184dd2d1975baf240621ddd";
 const baseUrl = "https://api.themoviedb.org/3";
-const apiUrl = `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
+const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTVmOTQ2OGExODRkZDJkMTk3NWJhZjI0MDYyMWRkZCIsInN1YiI6IjYyYmE0NmJjMTdiNWVmMDA1MjEzN2FmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.N024G2dn_bGT2kcNCmLLkQz_LaeyJqyidOh7Ddy0piM";
 
 export const getMovies = (props) => {
-  return fetch(`${baseUrl}${props}${apiKey}`)
-    .then((res) => res.json());
+  return fetch(`${baseUrl}${props}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  }).then((res) => res.json());
 };
 
-export const getSearch = (search) => {
-  if (search !== "") {
-    const searchUrl = `${baseUrl}/search/movie?api_key=${apiKey}&query=${search}`;
-    return fetch(searchUrl)
-      .then((res) => res.json())
-      .then((response) => {
-        const { results } = response;
-        const movies = results.map((movie) => {
-          const { poster_path, title, id } = movie;
-          return { poster_path, title, id };
-        });
-        return movies;
-      });
-  }
-};

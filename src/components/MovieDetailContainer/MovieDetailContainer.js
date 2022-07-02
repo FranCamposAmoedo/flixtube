@@ -11,7 +11,7 @@ const MovieDetailContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getMovies(`/movie/${movieId}?api_key=`)
+    getMovies(`/movie/${movieId}`)
     .then((data) => {
       setIsLoading(false);
       setMovie(data);
@@ -30,7 +30,7 @@ const MovieDetailContainer = () => {
 
   const baseUrlImage = "https://image.tmdb.org/t/p/w780";
   return (
-    <div className="container-xxl d-flex justify-content-center flex-wrap">
+    <div className="container-xxl d-flex justify-content-center flex-wrap mt-5">
       <img
         className="img-detail"
         src={`${baseUrlImage.concat(movie.poster_path)}`}

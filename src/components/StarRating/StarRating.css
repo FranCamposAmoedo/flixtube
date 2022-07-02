@@ -1,0 +1,49 @@
+.star-container {
+  display: flex;
+  justify-content: center;
+}
+
+.star-title {
+  color: white;
+  width: 100px;
+  height: 50px;
+  margin-bottom: 0;
+  text-align: end;
+}
+
+.star-form {
+  width: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 50px;
+}
+
+.star-form p {
+  text-align: center;
+}
+
+.star-form label {
+  font-size: 20px;
+}
+
+.star-input[type="radio"] {
+  display: none;
+}
+
+.star-label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.star-label:hover,
+.star-label:hover ~ .star-label {
+  color: orange;
+}
+
+.star-input[type="radio"]:checked ~ .star-label {
+  color: orange;
+}

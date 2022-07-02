@@ -1,50 +1,46 @@
 import { useEffect, useState } from "react";
 import "./SearchForm.css";
-import { getSearch } from "../../services/getMovies";
-import MovieSearch from "../MovieSearch/MovieSearch";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "../../services/useQuery";
 
 const SearchForm = () => {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
-  const [movie, setMovie] = useState([]);
+  const query = useQuery();
+  const searchQuery = query.get("search");
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setSearch(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/?search=${search}`)
+    navigate(`/?search=${search}`);
   };
 
-  useEffect(
-    (search) => {
-      getSearch(search)
-        .then((movie) => setMovie(movie))
-        .catch((error) => console.log(error));
-    },
-    [search]
-  );
+  useEffect(() => {
+    setSearch(searchQuery || "");
+  }, [searchQuery]);
 
   return (
     <>
-      <div className="container mt-5 mb-5">
-        <form className="input-group" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="form-control"
-            value={search}
-            placeholder="Search Movie"
-            onChange={handleChange}
-          />
-          <button className="btn btn-secondary" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-      {/* <MovieSearch movie={movie} /> */}
+      <form
+        className="d-flex navbar-item"
+        role="search"
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="form-control me-2"
+          type="search"
+          placeholder="Search Movie"
+          aria-label="Search"
+          value={search}
+          onChange={handleChange}
+        />
+        <button className="btn btn-outline-success" type="submit">
+          Search
+        </button>
+      </form>
     </>
   );
 };
