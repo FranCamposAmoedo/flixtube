@@ -1,15 +1,16 @@
-import "./MoviesContainer.css";
 import { useEffect, useState } from "react";
 import { getMovies } from "../../services/getMovies";
 import MovieCard from "../MovieCard/MovieCard";
 import Spinner from "react-bootstrap/esm/Spinner";
 import { useQuery } from "../../services/useQuery";
+import { useParams } from "react-router-dom";
 
 const MoviesContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const query = useQuery();
   const search = query.get("search");
+  const { voteId } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,7 +23,18 @@ const MoviesContainer = () => {
     });
   }, [search]);
 
-  console.log(movies);
+  useEffect(() => {
+    setIsLoading(true);
+    const vote_averageUrl = voteId
+      ? `/discover/movie?&sort_by=popularity.desc&vote_average.gte=${
+          voteId * 2 - 2
+        }&vote_average.lte=${voteId * 2}`
+      : "/discover/movie?&sort_by=popularity.desc";
+    getMovies(vote_averageUrl).then((data) => {
+      setIsLoading(false);
+      setMovies(data.results);
+    });
+  }, [voteId]);
 
   if (isLoading) {
     return (

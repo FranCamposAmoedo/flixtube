@@ -11,8 +11,7 @@ const MovieDetailContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getMovies(`/movie/${movieId}`)
-    .then((data) => {
+    getMovies(`/movie/${movieId}`).then((data) => {
       setIsLoading(false);
       setMovie(data);
     });
@@ -21,7 +20,12 @@ const MovieDetailContainer = () => {
   if (isLoading) {
     return (
       <div className="text-center mt-5">
-        <Spinner className="spinner" animation="border" variant="light" role="status">
+        <Spinner
+          className="spinner"
+          animation="border"
+          variant="light"
+          role="status"
+        >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       </div>
@@ -39,6 +43,10 @@ const MovieDetailContainer = () => {
       <div className="container-text">
         <h3>{movie.title}</h3>
         <p className="plot">{movie.overview}</p>
+        <p>
+          <strong>Release Date: </strong>
+          {movie.release_date}
+        </p>
         <strong>
           Rating: <span>{movie.vote_average}</span>
         </strong>

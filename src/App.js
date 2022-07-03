@@ -11,6 +11,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<MoviesContainer />} />
+          <Route path="/vote_average/:voteId" element={<MoviesContainer />} />
           <Route path="/movies/:movieId" element={<MovieDetailContainer />} />
           <Route path="*" element={<div>404</div>} />
         </Routes>

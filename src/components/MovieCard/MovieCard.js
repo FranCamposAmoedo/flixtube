@@ -5,7 +5,7 @@ const baseUrlImage = "https://image.tmdb.org/t/p/w500";
 
 const MovieCard = ({ id, title, poster }) => {
   return (
-    <div key={id} className="card m-3 card-movie" style={{ width: "18rem" }}>
+    <div key={id} className="card m-3 card-movie">
       <Link to={`/movies/${id}`}>
         <img
           src={baseUrlImage.concat(poster)}

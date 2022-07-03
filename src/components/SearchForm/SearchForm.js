@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./SearchForm.css";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "../../services/useQuery";
 
