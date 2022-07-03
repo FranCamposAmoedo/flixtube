@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# FlixTube
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_App creada en react para buscar info de películas_
 
-## Available Scripts
+## Comenzando 🚀
 
-In the project directory, you can run:
+_En la rama master, cloná el repositorio_
 
-### `npm start`
+### Pre-requisitos 📋
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+_Necesitas tener algún editor de código para poder ejecutar la aplicación y conexión a internet_
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+Editor de código (Recomendamos Visual Studio Code)
+Acceso a internet
+```
 
-### `npm test`
+### Instalación 🔧
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_UUna vez descargado tenés que instalar las dependencias en la pc
 
-### `npm run build`
+Dentro del Visual Studio Code, abrí la terminal y ejecutá:_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+cd "nombre de la carpeta raíz"
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_Luego:_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm install
+```
+_y por último ejecutá:_
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+_Una vez hecho ésto, se abrirá el proyecto en tu navegador Web_
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Ejecutando la App ⚙️
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* En la página principal de la App, aparecen las películas más populares del momento, ordenadas de manera descendente.
+* Desde la barra de búsqueda se puede digitar la película que uno desee, haciendo click en "Search" o apretando enter te da un resultado de las películas encontradas, de no haber entrega un mensaje "Movie not Found".
+* Clickeando en la imagen de cualquier película, te redirige a la vista del detalle, donde se encuentra más información de la película (cómo la sinopsis y el rating).
+* Haciendo click en las estrellas filtra las películas por rating, dónde cada una entrega un rango de 2 puntos de rating. Clickeando nuevamente sobre la seleccionada, vuelve a la página principal.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Construido con 🛠️
 
-## Learn More
+_Se utilizaron las siguientes herramientas:_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [HTML](https://developer.mozilla.org/es/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+* [BOOTSTRAP](https://getbootstrap.com)
+* [JAVASCRIPT](https://developer.mozilla.org/es/docs/Web/JavaScript)
+* [REACT](https://es.reactjs.org/docs/getting-started.html)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dependencias utilizadas ⌨️
 
-### Code Splitting
+* Bootstrap
+* React-icons
+* React-dom
+* React-router-dom
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Autores ✒️
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Francisco Campos Amoedo** [FranCamposAmoedo](https://github.com/FranCamposAmoedo)
